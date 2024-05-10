@@ -1,0 +1,65 @@
+/* AdminOverview.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 48%; /* Adjust based on your layout preference */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cardContent {
+  font-size: 16px;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  width: 50%;
+  margin: 10px auto 0;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.chart {
+  margin: 0 auto; /* Centers the chart horizontally */
+  width: 80%; /* Adjust width to fit your design */
+}

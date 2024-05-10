@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 20px;
+}
+
+.detailContainer {
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.infoContainer {
+  text-align: right;
+}
+
+.customerName, .dateText, .priority {
+  font-size: 14px;
+}
+
+.customerName {
+  font-weight: bold;
+}
+
+.priority {
+  font-weight: bold;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

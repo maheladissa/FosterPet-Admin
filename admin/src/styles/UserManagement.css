@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.itemContainer {
+  background-color: #FFFFFF;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.detail {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.buttonSmallBlue {
+  background-color: #007BFF;
+  color: #FFF;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}

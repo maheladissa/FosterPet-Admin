@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.detailContainer {
+  flex-grow: 1;
+}
+
+.name, .role, .detail {
+  margin-bottom: 4px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.role {
+  color: #666;
+  font-size: 14px;
+}
+
+.detail {
+  color: #999;
+  font-size: 12px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.buttonSmall, .buttonSmallBlue {
+  background-color: #E0E0E0;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonSmallBlue {
+  background-color: #007BFF;
+  color: #FFF;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
