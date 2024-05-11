@@ -1,36 +1,66 @@
 /* AdminOverview.css */
 
+body, html {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px); /* Adjusting the container height */
+  box-sizing: border-box; /* Ensures padding does not affect the overall width */
+  padding: 40px;
+  margin: auto;
+  background-color: #2F2F2F;
 }
 
 .content {
   flex: 1;
   padding: 20px;
+  width: 100%; /* Ensures content width responsiveness */
+
 }
 
 .header {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center; /* Centers the header text */
 }
 
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 20px; /* Adds space between cards */
   margin-bottom: 20px;
 }
 
 .card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
-  width: 48%; /* Adjust based on your layout preference */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 80px); /* Adjust width to display four cards per row with proper spacing */
+  transition: transform 0.3s ease-in-out; /* Adds a transform animation for interaction */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card on hover */
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: calc(50% - 20px); /* Adjusts width for two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Full width cards on very small screens */
+  }
 }
 
 .cardTitle {
@@ -46,20 +76,24 @@
 .button {
   background-color: #007bff;
   color: #fff;
-  padding: 15px;
+  padding: 8px 16px;
   border-radius: 5px;
   text-align: center;
-  display: block;
-  width: 50%;
-  margin: 10px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Allows button size to fit content */
+  margin-top: 20px;
   text-decoration: none;
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
 .chart {
-  margin: 0 auto; /* Centers the chart horizontally */
-  width: 80%; /* Adjust width to fit your design */
+  margin: 20px auto; /* Centers the chart and adds vertical space */
+  width: 100%; /* Adjust width to fit your design */
+  max-width: 800px; /* Optimal width for chart visibility */
 }

@@ -26,10 +26,10 @@ const AdminOrders = () => {
 
   return (
     <div className="container">
-      <div className="content">
-        <ul>
-          {data.map((item) => (
-            <li key={item.id} className="itemContainer">
+      <ul className="list">
+        {data.map((item) => (
+          <li key={item.id}>
+            <div className="item">
               <img
                 src="https://picsum.photos/400/600?image=1"
                 alt="Profile"
@@ -45,10 +45,10 @@ const AdminOrders = () => {
                 <button className="buttonSmall">Cancel Request</button>
                 <button className="buttonSmallBlue">Accept</button>
               </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

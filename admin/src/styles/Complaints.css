@@ -3,6 +3,20 @@
   flex-direction: column;
 }
 
+.searchAndFilter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"], select {
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .content {
   padding: 20px;
   overflow-y: auto;
@@ -52,10 +66,4 @@
 
 .priority {
   font-weight: bold;
-}
-
-.header {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
