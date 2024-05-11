@@ -25,30 +25,30 @@ const AdminOrders = () => {
   ];
 
   return (
-    <div className="container">
-      <ul className="list">
+    <div className="order_container">
+      <div className="order_list">
         {data.map((item) => (
-          <li key={item.id}>
-            <div className="item">
+          <div key={item.id}>
+            <div className="order_item">
               <img
                 src="https://picsum.photos/400/600?image=1"
                 alt="Profile"
                 className="profilePic"
               />
-              <div className="detailContainer">
+              <div className="order_detailContainer">
                 <div className="name">{item.name}</div>
                 <div className="role">{item.role}</div>
                 <div className="detail">{item.detail}</div>
               </div>
-              <div className="buttonContainer">
+              <div className="order_buttonContainer">
                 <button className="buttonSmall">View Details</button>
                 <button className="buttonSmall">Cancel Request</button>
                 <button className="buttonSmallBlue">Accept</button>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

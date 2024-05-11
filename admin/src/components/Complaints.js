@@ -27,6 +27,20 @@ const AdminComplaints = () => {
       date: "May 26, 2023, 7:30 PM",
       priority: "HIGH",
     },
+    {
+      id: "4",
+      title: "Didn't get hourly pet update",
+      customer: "Tom Cruise",
+      date: "May 26, 2023, 6:30 PM",
+      priority: "HIGH",
+    },
+    {
+      id: "5",
+      title: "Account changes",
+      customer: "Matt Damon",
+      date: "May 26, 2023, 8:00 AM",
+      priority: "MEDIUM",
+    },
   ];
 
   const handleSearchChange = (event) => {
@@ -45,7 +59,7 @@ const AdminComplaints = () => {
   );
 
   return (
-    <div className="container">
+    <div className="overview_container">
       <div className="searchAndFilter">
         <input
           type="text"
@@ -60,9 +74,9 @@ const AdminComplaints = () => {
           <option value="LOW">Low</option>
         </select>
       </div>
-      <div className="content">
+      <div className="overview_content">
         {filteredComplaints.map((item) => (
-          <div key={item.id} className="itemContainer">
+          <div key={item.id} className="overview_items">
             <img
               src="https://picsum.photos/400/600?image=1"
               alt="Profile"

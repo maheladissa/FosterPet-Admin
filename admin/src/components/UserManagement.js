@@ -29,26 +29,27 @@ const AdminUserManagement = () => {
     },
   ];
 
+  const handleUserDetails = (id) => {
+    // You might want to handle more logic here, such as opening a modal with user details
+    console.log(`Details for user ID: ${id}`);
+  };
+
   return (
-    <div className="container">
-      <div className="content">
-        <div>
-          {users.map((item) => (
-            <div key={item.id} className="itemContainer">
-              <p className="name">{item.name}</p>
-              <p className="detail">{item.time}</p>
-              <p className="detail">{item.phone}</p>
-              <button
-                className="buttonSmallBlue"
-                onClick={() => {
-                  /* Handle Click */
-                }}
-              >
-                <span className="buttonTextWhite">Details and Actions</span>
-              </button>
-            </div>
-          ))}
-        </div>
+    <div className="user_container">
+      <div className="user_content">
+        {users.map((user) => (
+          <div key={user.id} className="user_itemContainer">
+            <p className="name">{user.name}</p>
+            <p className="detail">{user.time}</p>
+            <p className="detail">{user.phone}</p>
+            <button
+              className="buttonSmallBlue"
+              onClick={() => handleUserDetails(user.id)}
+            >
+              <span className="buttonTextWhite">Details and Actions</span>
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );

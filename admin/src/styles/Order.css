@@ -1,64 +1,86 @@
-
-.item {
-  display: flex;
-  flex-direction: column; /* Ensures the content within each item is laid out horizontally */
-  align-items: center;
-  width: 100%;
-  background-color: aqua;
+/* General Styles for the Orders Container */
+.order_container {
+  font-family: 'Arial', sans-serif; /* Clean, professional font */
+  padding:30px 100px; /* Padding around the container */
+  width: 60%;
+  margin: auto;
+  margin-top: 80px;
+  
 }
 
-.itemContainer {
+/* List of Orders */
+.order_list {
   display: flex;
-  background-color: #007BFF;
+  flex-direction: column;
+  gap: 10px; /* Spacing between each order item */
+}
+
+/* Individual Order Item Styling */
+.order_item {
+  background-color: #ffffff; /* White background for each item */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  padding: 40px; /* Padding inside each order */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for 3D effect */
 }
 
 .profilePic {
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-right: 20px; /* Adds spacing between the image and the details */
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  border-radius: 50%; /* Circle shape */
+  margin-right: 15px; /* Space between picture and details */
 }
 
-.detailContainer {
-  flex-grow: 1;
+.order_detailContainer {
+  flex-grow: 1; /* Takes remaining space */
 }
 
 .name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: bold; /* Emphasizes the name */
+  color: #333; /* Dark text for better readability */
 }
 
 .role {
-  font-size: 16px;
-  color: #666666;
+  font-size: 14px;
+  color: #666; /* Lighter color for less priority info */
 }
 
 .detail {
-  font-size: 14px;
-  color: #888888;
+  font-size: 12px;
+  color: #999; /* Even lighter for the least important info */
+  margin-top: 5px; /* Space from role */
 }
 
-.buttonContainer {
+/* Button Container */
+.order_buttonContainer {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* Space between buttons */
 }
 
 .buttonSmall, .buttonSmallBlue {
+  padding: 8px 12px; /* Padding for touch friendliness */
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 14px; /* Readable font size */
+  color: #fff; /* White text */
 }
 
 .buttonSmall {
-  background-color: #ffffff;
-  color: #333333;
-  border: 1px solid #cccccc;
+  background-color: #777; /* Neutral color for generic actions */
+}
+
+.buttonSmall:hover {
+  background-color: #555; /* Darker on hover */
 }
 
 .buttonSmallBlue {
-  background-color: #007BFF;
-  color: #ffffff;
+  background-color: #007bff; /* Blue for primary actions */
+}
+
+.buttonSmallBlue:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }

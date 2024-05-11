@@ -1,41 +1,50 @@
-.container {
-  display: flex;
-  flex-direction: column;
+/* General Container Styles */
+.overview_container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 20px;
+  min-height: calc(100vh - 80px); /* Adjusting the container height */
+  width: 60%;
+  margin:auto
 }
 
+/* Search and Filter Bar */
 .searchAndFilter {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchAndFilter input[type="text"],
+.searchAndFilter select {
   padding: 10px;
-  margin-bottom: 10px;
-}
-
-input[type="text"], select {
-  padding: 8px;
-  margin-right: 5px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
+  width: 100%;
 }
 
-.content {
-  padding: 20px;
-  overflow-y: auto;
+/* Complaint Item Styles */
+.overview_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.itemContainer {
+.overview_items {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  background-color: #FFFFFF;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  padding: 10px;
+  gap: 20px;
 }
 
 .profilePic {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .detailContainer {
@@ -43,27 +52,32 @@ input[type="text"], select {
 }
 
 .title {
-  font-weight: bold;
   font-size: 16px;
-}
-
-.subtitle {
-  color: #666;
-  font-size: 14px;
-}
-
-.infoContainer {
-  text-align: right;
-}
-
-.customerName, .dateText, .priority {
-  font-size: 14px;
-}
-
-.customerName {
   font-weight: bold;
+}
+
+.subtitle, .customerName, .dateText {
+  font-size: 14px;
+  color: #666;
 }
 
 .priority {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
   font-weight: bold;
+  text-align: center;
+}
+
+/* Color Coding for Priority */
+.priority[style*="color: #FF0000"] {
+  background-color: #FF0000;
+}
+
+.priority[style*="color: #008000"] {
+  background-color: #008000;
+}
+
+.priority[style*="color: #FFA500"] {
+  background-color: #FFA500;
 }

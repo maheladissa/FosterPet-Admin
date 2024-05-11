@@ -12,7 +12,6 @@ body, html {
   box-sizing: border-box; /* Ensures padding does not affect the overall width */
   padding: 40px;
   margin: auto;
-  background-color: #2F2F2F;
 }
 
 .content {
