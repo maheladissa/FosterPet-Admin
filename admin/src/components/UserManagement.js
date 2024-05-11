@@ -34,6 +34,14 @@ const AdminUserManagement = () => {
     console.log(`Details for user ID: ${id}`);
   };
 
+  const messageUser = (id) => {
+    console.log(`Message user with user ID: ${id}`);
+  };
+
+  const handleRemoveUser = (id) => {
+    console.log(`Remove user with user ID: ${id}`);
+  };
+
   return (
     <div className="user_container">
       <div className="user_content">
@@ -46,7 +54,21 @@ const AdminUserManagement = () => {
               className="buttonSmallBlue"
               onClick={() => handleUserDetails(user.id)}
             >
-              <span className="buttonTextWhite">Details and Actions</span>
+              <span className="buttonTextWhite">Details</span>
+            </button>
+
+            <button
+              className="buttonSmallBlue"
+              onClick={() => messageUser(user.id)}
+            >
+              <span className="buttonTextWhite">Message</span>
+            </button>
+
+            <button
+              className="buttonSmallBlue"
+              onClick={() => handleRemoveUser(user.id)}
+            >
+              <span className="buttonTextWhite">Remove</span>
             </button>
           </div>
         ))}

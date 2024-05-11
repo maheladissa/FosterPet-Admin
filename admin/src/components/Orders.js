@@ -1,28 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Order.css";
+
 const AdminOrders = () => {
-  // Mock data
-  const data = [
-    { id: "1", name: "Nipuni Perera", role: "Kennel", detail: "Test data" },
+  // Initial mock data
+  const initialData = [
+    {
+      id: "1",
+      name: "Nipuni Perera",
+      role: "Kennel",
+      detail: "kotikawaththa",
+    },
     {
       id: "2",
       name: "Isuru Malikshara",
       role: "Volunteer",
-      detail: "Test data",
+      detail: "Gampaha",
     },
     {
       id: "3",
       name: "Isuru Malikshara",
-      role: "Volunteer",
-      detail: "Test data",
+      role: "Kennel",
+      detail: "Kelaniya",
     },
     {
       id: "4",
       name: "Isuru Malikshara",
       role: "Volunteer",
-      detail: "Test data",
+      detail: "Kiribathgoda",
     },
   ];
+
+  const [data, setData] = useState(initialData);
+
+  // Remove an item from the list
+  const handleCancel = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
+
+  // Log details for view and accept
+  const handleViewDetails = (id) => {
+    //Basically can redirect to the kennel profile
+    console.log(`View details for id: ${id}`);
+  };
+
+  const handleAccept = (id) => {
+    console.log(`Accept request for id: ${id}`);
+  };
 
   return (
     <div className="order_container">
@@ -41,9 +64,24 @@ const AdminOrders = () => {
                 <div className="detail">{item.detail}</div>
               </div>
               <div className="order_buttonContainer">
-                <button className="buttonSmall">View Details</button>
-                <button className="buttonSmall">Cancel Request</button>
-                <button className="buttonSmallBlue">Accept</button>
+                <button
+                  className="buttonSmall"
+                  onClick={() => handleViewDetails(item.id)}
+                >
+                  View Details
+                </button>
+                <button
+                  className="buttonSmall"
+                  onClick={() => handleCancel(item.id)}
+                >
+                  Cancel Request
+                </button>
+                <button
+                  className="buttonSmallBlue"
+                  onClick={() => handleAccept(item.id)}
+                >
+                  Accept
+                </button>
               </div>
             </div>
           </div>
