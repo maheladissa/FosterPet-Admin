@@ -1,7 +1,10 @@
-import React from "react";
-import "../styles/UserManagement.css"; // Assuming you have CSS in a separate file
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/UserManagement.css";
 
 const AdminUserManagement = () => {
+  const navigate = useNavigate();
+
   const users = [
     {
       name: "Nipuni Perera",
@@ -29,9 +32,12 @@ const AdminUserManagement = () => {
     },
   ];
 
-  const handleUserDetails = (id) => {
-    // You might want to handle more logic here, such as opening a modal with user details
-    console.log(`Details for user ID: ${id}`);
+  const [data, setData] = useState(users);
+
+  const handleUserDetails = (item) => {
+    navigate("/user-details", {
+      state: { name: item.name, time: item.time, phone: item.phone },
+    });
   };
 
   const messageUser = (id) => {
@@ -39,20 +45,21 @@ const AdminUserManagement = () => {
   };
 
   const handleRemoveUser = (id) => {
-    console.log(`Remove user with user ID: ${id}`);
+    setData(data.filter((item) => item.id !== id));
+    console.log(`Removed user with user ID: ${id}`);
   };
 
   return (
     <div className="user_container">
       <div className="user_content">
-        {users.map((user) => (
+        {data.map((user) => (
           <div key={user.id} className="user_itemContainer">
             <p className="name">{user.name}</p>
             <p className="detail">{user.time}</p>
             <p className="detail">{user.phone}</p>
             <button
               className="buttonSmallBlue"
-              onClick={() => handleUserDetails(user.id)}
+              onClick={() => handleUserDetails(user)}
             >
               <span className="buttonTextWhite">Details</span>
             </button>
