@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Order.css";
 
 const AdminOrders = () => {
+  const navigate = useNavigate();
+
   // Initial mock data
   const initialData = [
     {
@@ -38,9 +41,11 @@ const AdminOrders = () => {
   };
 
   // Log details for view and accept
-  const handleViewDetails = (id) => {
+  const handleViewDetails = (item) => {
     //Basically can redirect to the kennel profile
-    console.log(`View details for id: ${id}`);
+    navigate("/order-details", {
+      state: { name: item.name, role: item.role, detail: item.detail },
+    });
   };
 
   const handleAccept = (id) => {
@@ -66,7 +71,7 @@ const AdminOrders = () => {
               <div className="order_buttonContainer">
                 <button
                   className="buttonSmall"
-                  onClick={() => handleViewDetails(item.id)}
+                  onClick={() => handleViewDetails(item)}
                 >
                   View Details
                 </button>
