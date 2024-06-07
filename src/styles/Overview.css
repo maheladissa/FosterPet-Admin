@@ -19,6 +19,7 @@ body, html {
   padding: 20px;
   width: 100%; /* Ensures content width responsiveness */
 
+
 }
 
 .header {
@@ -49,17 +50,19 @@ body, html {
 
 .cardsContainer {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px; /* Adds space between cards */
   margin-bottom: 20px;
+
 }
 
 .card {
   background-color: #ffffff;
   border-radius: 5px;
   padding: 30px 20px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
   width: calc(25% - 80px); /* Adjust width to display four cards per row with proper spacing */
   transition: transform 0.3s ease-in-out; /* Adds a transform animation for interaction */
