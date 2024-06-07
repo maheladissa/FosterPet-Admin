@@ -11,8 +11,8 @@ function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/orders" activeClassName="active">
-            Orders
+          <NavLink to="/requests" activeClassName="active">
+            Kennel requests
           </NavLink>
         </li>
         <li>
