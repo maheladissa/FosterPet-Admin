@@ -23,7 +23,7 @@ function App() {
           </header>
           <main>
             <Routes>
-              <Route path="/" element={<Navigate replace to="/overview" />} />
+              <Route path="/" element={<Navigate replace to="/login" />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/orders" element={<Orders />} />
               <Route path="/complaints" element={<Complaints />} />

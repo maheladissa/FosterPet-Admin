@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "../styles/Overview.css";
 import { fetchDashboardData } from "../services/OverviewService";
+import useAuth from "../services/useAuth";
 
 const AdminOverView = () => {
   const options = {
@@ -22,6 +23,8 @@ const AdminOverView = () => {
     },
     maintainAspectRatio: false,
   };
+
+  useAuth();
 
   const [dashboardData, setDashboardData] = useState({
     activeAgents: 0,

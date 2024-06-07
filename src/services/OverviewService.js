@@ -1,7 +1,6 @@
 // src/services/AdminOverviewService.js
 
 const API_URL = "https://fosterpet.azurewebsites.net/api/admin/dashboard";
-localStorage.setItem("token" , "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhlbGExMDBAZ21haWwuY29tIiwiaWF0IjoxNzE2NDkxMTUwLCJleHAiOjE3MTY2MjA3NTB9.EMAkkdECelU5xkk4EvQu3liK27rxkZFswMWxh6Acp-4");
 const Token = localStorage.getItem("token");
 
 export const fetchDashboardData = async () => {
