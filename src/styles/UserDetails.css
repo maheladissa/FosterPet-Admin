@@ -1,0 +1,15 @@
+.user-details {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.user-details h2 {
+  color: #333;
+}
+
+.user-details p {
+  color: #666;
+  margin: 5px 0;
+}
