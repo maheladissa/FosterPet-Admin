@@ -63,28 +63,28 @@ const AdminOverView = () => {
         <div className="card">
           <h2 className="cardTitle">Active Agents</h2>
           <p className="cardContent">{dashboardData.activeAgents}</p>
-          <Link to="/details" className="button">
+          <Link to="/overview/agent" className="button">
             View Details
           </Link>
         </div>
         <div className="card">
           <h2 className="cardTitle">Ongoing Fosterings</h2>
           <p className="cardContent">{dashboardData.ongoingFostering}</p>
-          <Link to="/details" className="button">
+          <Link to="/overview/ongoing" className="button">
             View Details
           </Link>
         </div>
         <div className="card">
           <h2 className="cardTitle">Active Users</h2>
           <p className="cardContent">{dashboardData.activeUsers}</p>
-          <Link to="/details" className="button">
+          <Link to="/overview/users" className="button">
             View Details
           </Link>
         </div>
         <div className="card">
           <h2 className="cardTitle">Completed</h2>
           <p className="cardContent">{dashboardData.completedFostering}</p>
-          <Link to="/details" className="button">
+          <Link to="/overview/completed" className="button">
             View Details
           </Link>
         </div>
