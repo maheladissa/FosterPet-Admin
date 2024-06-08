@@ -5,24 +5,24 @@ import { fetchDashboardData } from "../services/OverviewService";
 import useAuth from "../services/useAuth";
 
 const AdminOverView = () => {
-  const options = {
-    scales: {
-      x: {
-        title: {
-          display: true,
-          text: "Month",
-        },
-      },
-      y: {
-        beginAtZero: true,
-        title: {
-          display: true,
-          text: "Value",
-        },
-      },
-    },
-    maintainAspectRatio: false,
-  };
+  // const options = {
+  //   scales: {
+  //     x: {
+  //       title: {
+  //         display: true,
+  //         text: "Month",
+  //       },
+  //     },
+  //     y: {
+  //       beginAtZero: true,
+  //       title: {
+  //         display: true,
+  //         text: "Value",
+  //       },
+  //     },
+  //   },
+  //   maintainAspectRatio: false,
+  // };
 
   useAuth();
 
