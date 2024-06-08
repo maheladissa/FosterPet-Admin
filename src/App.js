@@ -16,6 +16,10 @@ import ResetPassword from "./components/ResetPassword";
 import OrderDetails from "./components/OrderDetails";
 import UserDetails from "./components/UserDetails";
 import ComplaintDetail from "./components/ComplaintDetails";
+import AgentDetails from "./components/AgentDetails";
+import OngoingFosterings from "./components/OngoingFosterings";
+import ActiveUsers from "./components/ActiveUsers";
+import CompletedDetails from "./components/CompletedDetails";
 
 function App() {
   return (
@@ -37,6 +41,10 @@ function App() {
             <Route path="/order-details" element={<OrderDetails />} />
             <Route path="/user-details" element={<UserDetails />} />
             <Route path="/complaint/:id" element={<ComplaintDetail />} />
+            <Route path="/overview/agent" element={<AgentDetails />} />
+            <Route path="/overview/ongoing" element={<OngoingFosterings />} />
+            <Route path="/overview/users" element={<ActiveUsers />} />
+            <Route path="/overview/completed" element={<CompletedDetails />} />
           </Routes>
         </main>
       </div>
