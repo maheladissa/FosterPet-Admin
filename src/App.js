@@ -15,6 +15,7 @@ import Register from "./components/Register";
 import ResetPassword from "./components/ResetPassword";
 import OrderDetails from "./components/OrderDetails";
 import UserDetails from "./components/UserDetails";
+import ComplaintDetail from "./components/ComplaintDetails";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate replace to="/overview" />} />
             <Route path="/overview" element={<Overview />} />
-            <Route path="/orders" element={<Orders />} />
+            <Route path="/requests" element={<Orders />} />
             <Route path="/complaints" element={<Complaints />} />
             <Route path="/user-management" element={<UserManagement />} />
             <Route path="/login" element={<Login />} />
@@ -35,6 +36,7 @@ function App() {
             <Route path="/reset" element={<ResetPassword />} />
             <Route path="/order-details" element={<OrderDetails />} />
             <Route path="/user-details" element={<UserDetails />} />
+            <Route path="/complaint/:id" element={<ComplaintDetail />} />
           </Routes>
         </main>
       </div>

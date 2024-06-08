@@ -32,7 +32,7 @@
   border-radius: 4px;
 }
 
-.button {
+.login-button {
   background-color: blue;
   padding: 10px;
   border-radius: 20px;
@@ -45,6 +45,8 @@
   text-align: center;
   border: none;
   cursor: pointer;
+
+  
 }
 
 .error {

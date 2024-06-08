@@ -1,9 +1,17 @@
+.container{
+  width: 80%;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .order_details_container {
   background-color: #f0f0f0;
+  width: 60%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .details_item {
@@ -16,4 +24,11 @@
 
 .value {
   margin-left: 10px;
+}
+
+.button-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
 }

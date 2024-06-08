@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Overview.css";
 import { fetchDashboardData } from "../services/OverviewService";
@@ -58,7 +58,7 @@ const AdminOverView = () => {
   }
 
   return (
-    <div className="container">
+    <div className="overview-container">
       <div className="cardsContainer">
         <div className="card">
           <h2 className="cardTitle">Active Agents</h2>

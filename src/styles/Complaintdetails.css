@@ -1,0 +1,87 @@
+/* ComplaintDetail.css */
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.header {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 2px solid #e1e1e1;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  margin: 10px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.detail-item span {
+  font-weight: bold;
+  color: #333;
+}
+
+.priority {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.priority-high {
+  background-color: #ff4757;
+}
+
+.priority-medium {
+  background-color: #ffa502;
+}
+
+.priority-low {
+  background-color: #2ed573;
+}
+
+/* ComplaintDetail.css */
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+
+}
+
+.button {
+  flex: 1; /* Make buttons take equal space */
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button.discard {
+  background-color: #3a3332;
+  color: white;
+}
+
+.button.contact {
+  background-color: #6c88e6;
+  color: white;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
