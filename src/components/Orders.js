@@ -41,10 +41,6 @@ const AdminOrders = () => {
     });
   };
 
-  const handleAccept = (id) => {
-    console.log(`Accept request for id: ${id}`);
-  };
-
   return (
     <div className="order_container">
       <div className="order_list">
@@ -75,19 +71,13 @@ const AdminOrders = () => {
                     className="buttonSmall"
                     onClick={() => handleViewDetails(item)}
                   >
-                    View Details
+                    Review Now
                   </button>
                   <button
                     className="buttonSmall"
                     onClick={() => handleCancel(item.kennelId)}
                   >
                     Cancel Request
-                  </button>
-                  <button
-                    className="buttonSmallBlue"
-                    onClick={() => handleAccept(item.kennelId)}
-                  >
-                    Accept
                   </button>
                 </div>
               </div>
