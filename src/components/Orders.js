@@ -35,21 +35,12 @@ const AdminOrders = () => {
 
   const [data, setData] = useState(initialData);
 
-  // Remove an item from the list
-  const handleCancel = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
-
   // Log details for view and accept
   const handleViewDetails = (item) => {
     //Basically can redirect to the kennel profile
     navigate("/order-details", {
       state: { name: item.name, role: item.role, detail: item.detail },
     });
-  };
-
-  const handleAccept = (id) => {
-    console.log(`Accept request for id: ${id}`);
   };
 
   return (
@@ -73,19 +64,7 @@ const AdminOrders = () => {
                   className="buttonSmall"
                   onClick={() => handleViewDetails(item)}
                 >
-                  View Details
-                </button>
-                <button
-                  className="buttonSmall"
-                  onClick={() => handleCancel(item.id)}
-                >
-                  Cancel Request
-                </button>
-                <button
-                  className="buttonSmallBlue"
-                  onClick={() => handleAccept(item.id)}
-                >
-                  Accept
+                  Review Now
                 </button>
               </div>
             </div>

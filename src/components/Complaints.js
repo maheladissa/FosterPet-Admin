@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../styles/Complaints.css";
+import { useNavigate } from "react-router-dom";
 
 const AdminComplaints = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [priorityFilter, setPriorityFilter] = useState("ALL");
+  const navigate = useNavigate();
 
   const complaintsData = [
     {
@@ -58,6 +60,10 @@ const AdminComplaints = () => {
         complaint.customer.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  const handleClick = (complaint) => {
+    navigate(`/complaint/${complaint.id}`, { state: { complaint } });
+  };
+
   return (
     <div className="overview_container">
       <div className="searchAndFilter">
@@ -76,7 +82,11 @@ const AdminComplaints = () => {
       </div>
       <div className="overview_content">
         {filteredComplaints.map((item) => (
-          <div key={item.id} className="overview_items">
+          <div
+            key={item.id}
+            className="overview_items"
+            onClick={() => handleClick(item)}
+          >
             <img
               src="https://picsum.photos/400/600?image=1"
               alt="Profile"
