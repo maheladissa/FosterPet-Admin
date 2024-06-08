@@ -18,6 +18,12 @@ const RegisterScreen = ({ navigation }) => {
 
   const handleRegister = async () => {
     // Validation and registration logic
+        setConfirmPasswordError("");
+        setPasswordError("");
+        setEmailError("");
+        setLastNameError("");
+        setFirstNameError("");
+        setError("");
   };
 
   return (
