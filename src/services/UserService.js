@@ -1,9 +1,9 @@
-const API_URL = "https://fosterpet.azurewebsites.net/api/complaint/";
+const API_URL = "https://fosterpet.azurewebsites.net/api/user";
 const Token = localStorage.getItem("token");
 
-export const fetchComplaintsData = async () => {
+export const fetchAllUsers = async () => {
     try {
-        const response = await fetch(API_URL+"/pending", {
+        const response = await fetch(API_URL, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
