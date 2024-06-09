@@ -1,49 +1,28 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/Complaints.css";
 import { useNavigate } from "react-router-dom";
+import { fetchComplaintsData } from "../services/ComplaintService";
 
 const AdminComplaints = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [priorityFilter, setPriorityFilter] = useState("ALL");
   const navigate = useNavigate();
+  const [complaintsData, setComplaintsData] = useState([]);
 
-  const complaintsData = [
-    {
-      id: "1",
-      title: "Didn't get hourly pet update",
-      customer: "Tom Cruise",
-      date: "May 26, 2023, 6:30 PM",
-      priority: "HIGH",
-    },
-    {
-      id: "2",
-      title: "Account changes",
-      customer: "Matt Damon",
-      date: "May 26, 2023, 8:00 AM",
-      priority: "LOW",
-    },
-    {
-      id: "3",
-      title: "Pet update",
-      customer: "Robert Downey",
-      date: "May 26, 2023, 7:30 PM",
-      priority: "HIGH",
-    },
-    {
-      id: "4",
-      title: "Didn't get hourly pet update",
-      customer: "Tom Cruise",
-      date: "May 26, 2023, 6:30 PM",
-      priority: "HIGH",
-    },
-    {
-      id: "5",
-      title: "Account changes",
-      customer: "Matt Damon",
-      date: "May 26, 2023, 8:00 AM",
-      priority: "MEDIUM",
-    },
-  ];
+  useEffect(() => {
+    const loadComplaintsData = async () => {
+      try {
+        const response = await fetchComplaintsData();
+        console.log("Pending approvals:", response);
+        const complaintsData = response; // Ensure this matches your actual response structure
+        setComplaintsData(complaintsData);
+      } catch (error) {
+        console.error("Error fetching pending approvals:", error);
+      }
+    };
+
+    loadComplaintsData();
+  }, []);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);

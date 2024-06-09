@@ -1,38 +1,29 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/UserManagement.css";
+import {fetchAllUsers} from "../services/UserService";
 
 const AdminUserManagement = () => {
   const navigate = useNavigate();
 
-  const users = [
-    {
-      name: "Nipuni Perera",
-      time: "Mon - Sat: 8am - 7pm",
-      phone: "123-456-7890",
-      id: 1,
-    },
-    {
-      name: "Isuru mal",
-      time: "Mon - Sat: 8am - 7pm",
-      phone: "123-456-7890",
-      id: 2,
-    },
-    {
-      name: "Mahela Dissa",
-      time: "Mon - Sat: 8am - 7pm",
-      phone: "123-456-7890",
-      id: 3,
-    },
-    {
-      name: "Sachin Thara",
-      time: "Mon - Sat: 8am - 7pm",
-      phone: "123-456-7890",
-      id: 4,
-    },
-  ];
+  const [usersData, setUsersData] = useState([]);
 
-  const [data, setData] = useState(users);
+  useEffect(() => {
+    const loadUsersData = async () => {
+      try {
+        const response = await fetchAllUsers();
+        console.log("Users:", response);
+        const usersData = response; // Ensure this matches your actual response structure
+        setUsersData(usersData);
+      } catch (error) {
+        console.error("Error fetching pending approvals:", error);
+      }
+    };
+
+    loadUsersData();
+  }, []);
+
+  const [data, setData] = useState(usersData);
 
   const handleUserDetails = (item) => {
     navigate("/user-details", {
