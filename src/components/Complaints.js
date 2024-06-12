@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Complaints.css";
 import { useNavigate } from "react-router-dom";
 import { fetchComplaintsData } from "../services/ComplaintService";
@@ -35,8 +35,10 @@ const AdminComplaints = () => {
   const filteredComplaints = complaintsData.filter(
     (complaint) =>
       (complaint.priority === priorityFilter || priorityFilter === "ALL") &&
-      (complaint.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        complaint.customer.toLowerCase().includes(searchTerm.toLowerCase()))
+      ((complaint.title &&
+        complaint.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (complaint.customer &&
+          complaint.customer.toLowerCase().includes(searchTerm.toLowerCase())))
   );
 
   const handleClick = (complaint) => {

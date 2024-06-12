@@ -4,7 +4,7 @@ import "../styles/OrderDetails.css";
 
 const OrderDetails = () => {
   const location = useLocation();
-  const { name, role, detail } = location.state;
+  const { item } = location.state;
 
   // Remove an item from the list
   const handleCancel = (id) => {
@@ -20,15 +20,25 @@ const OrderDetails = () => {
       <div className="order_details_container">
         <div className="details_item">
           <div className="label">Name:</div>
-          <div className="value">{name}</div>
+          <div className="value">{item.kennelName}</div>
         </div>
         <div className="details_item">
-          <div className="label">Role:</div>
-          <div className="value">{role}</div>
+          <div className="label">Address:</div>
+          <div className="value">
+            {`${item.kennelAddress.address1} ${item.kennelAddress.address2} ${item.kennelAddress.city}, ${item.kennelAddress.zipCode}`}
+          </div>
         </div>
         <div className="details_item">
-          <div className="label">Detail:</div>
-          <div className="value">{detail}</div>
+          <div className="label">Owner:</div>
+          <div className="value">{item.ownerName}</div>
+        </div>
+        <div className="details_item">
+          <div className="label">Owner Email:</div>
+          <div className="value">{item.ownerEmail}</div>
+        </div>
+        <div className="details_item">
+          <div className="label">Owner Phone:</div>
+          <div className="value">{item.ownerPhone}</div>
         </div>
       </div>
 

@@ -34,11 +34,10 @@ const AdminOrders = () => {
   const handleViewDetails = (item) => {
     navigate("/order-details", {
       state: {
-        name: item.kennelName,
-        role: item.ownerName,
-        detail: `${item.kennelAddress.address1} ${item.kennelAddress.address2} ${item.kennelAddress.city}, ${item.kennelAddress.zipCode}`,
+        item,
       },
     });
+    console.log(item);
   };
 
   return (
