@@ -34,11 +34,11 @@ const AdminComplaints = () => {
 
   const filteredComplaints = complaintsData.filter(
     (complaint) =>
-      (complaint.priority === priorityFilter || priorityFilter === "ALL") &&
-      ((complaint.title &&
-        complaint.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (complaint.customer &&
-          complaint.customer.toLowerCase().includes(searchTerm.toLowerCase())))
+      (complaint.status === priorityFilter || priorityFilter === "ALL") &&
+      ((complaint.message &&
+        complaint.message.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (complaint.userName &&
+          complaint.userName.toLowerCase().includes(searchTerm.toLowerCase())))
   );
 
   const handleClick = (complaint) => {
