@@ -9,21 +9,33 @@ const ComplaintDetail = () => {
   return (
     <div className="container">
       <div className="header">
-        {complaint.title}{" "}
-        <div
-          className={`detail-item priority priority-${complaint.priority.toLowerCase()}`}
+        {complaint.message}{" "}
+        <span
+          className="priority"
+          style={{
+            color:
+              complaint.status === "PENDING"
+                ? "#FF0000"
+                : complaint.status === "COMPLETED"
+                ? "#008000"
+                : "#FFA500",
+          }}
         >
-          {complaint.priority}
-        </div>
+          {complaint.status}
+        </span>
+      </div>
+      <div className="detail-item">
+        <span>Kennel: </span>
+        {complaint.kennelName}
       </div>
 
       <div className="detail-item">
         <span>Customer: </span>
-        {complaint.customer}
+        {complaint.userName}
       </div>
       <div className="detail-item">
         <span>Date: </span>
-        {complaint.date}
+        {complaint.createdAt}
       </div>
 
       <div className="buttons">

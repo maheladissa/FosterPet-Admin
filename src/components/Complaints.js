@@ -34,11 +34,11 @@ const AdminComplaints = () => {
 
   const filteredComplaints = complaintsData.filter(
     (complaint) =>
-      (complaint.priority === priorityFilter || priorityFilter === "ALL") &&
-      ((complaint.title &&
-        complaint.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (complaint.customer &&
-          complaint.customer.toLowerCase().includes(searchTerm.toLowerCase())))
+      (complaint.status === priorityFilter || priorityFilter === "ALL") &&
+      ((complaint.message &&
+        complaint.message.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (complaint.userName &&
+          complaint.userName.toLowerCase().includes(searchTerm.toLowerCase())))
   );
 
   const handleClick = (complaint) => {
@@ -55,10 +55,10 @@ const AdminComplaints = () => {
           value={searchTerm}
         />
         <select onChange={handleFilterChange} value={priorityFilter}>
-          <option value="ALL">All Priorities</option>
-          <option value="HIGH">High</option>
-          <option value="MEDIUM">Medium</option>
-          <option value="LOW">Low</option>
+          <option value="ALL">All</option>
+          <option value="NEW">New</option>
+          <option value="PENDING">Pending</option>
+          <option value="COMPLETED">Completed</option>
         </select>
       </div>
       <div className="overview_content">
@@ -74,25 +74,31 @@ const AdminComplaints = () => {
               className="profilePic"
             />
             <div className="detailContainer">
-              <p className="title">{item.title}</p>
-              <p className="subtitle">Updated 1 day ago</p>
+              <div>
+                {" "}
+                <p className="title">
+                  {item.message}{" "}
+                  <span
+                    className="priority"
+                    style={{
+                      color:
+                        item.status === "PENDING"
+                          ? "#FF0000"
+                          : item.status === "COMPLETED"
+                          ? "#008000"
+                          : "#FFA500",
+                    }}
+                  >
+                    {item.status}
+                  </span>
+                </p>
+              </div>
+
+              <p className="subtitle">{item.kennelName}</p>
             </div>
             <div className="infoContainer">
-              <p className="customerName">{item.customer}</p>
-              <p className="dateText">{item.date}</p>
-              <p
-                className="priority"
-                style={{
-                  color:
-                    item.priority === "HIGH"
-                      ? "#FF0000"
-                      : item.priority === "LOW"
-                      ? "#008000"
-                      : "#FFA500",
-                }}
-              >
-                {item.priority}
-              </p>
+              <p className="customerName">{item.userName}</p>
+              <p className="dateText">{item.createdAt}</p>
             </div>
           </div>
         ))}
