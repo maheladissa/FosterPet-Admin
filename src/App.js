@@ -39,7 +39,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/reset" element={<ResetPassword />} />
             <Route path="/order-details" element={<OrderDetails />} />
-            <Route path="/user-details" element={<UserDetails />} />
+            <Route path="/user-details/:id" element={<UserDetails />} />
             <Route path="/complaint/:id" element={<ComplaintDetail />} />
             <Route path="/overview/agent" element={<AgentDetails />} />
             <Route path="/overview/ongoing" element={<OngoingFosterings />} />
