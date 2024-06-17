@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Register.css";
 import { useNavigate } from "react-router-dom";
+// import AuthenticationService from '../services/AuthenticationService';
 
 const RegisterScreen = () => {
   const [firstName, setFirstName] = useState("");
@@ -29,55 +30,79 @@ const RegisterScreen = () => {
   };
 
   return (
-    <div className="form-container">
-      <h1 className="title">Register</h1>
-      {error && <p className="error">{error}</p>}
-      <input
-        className="input"
-        placeholder="First Name"
-        onChange={(e) => setFirstName(e.target.value)}
-        value={firstName}
-      />
-      {firstNameError && <p className="error">{firstNameError}</p>}
-      <input
-        className="input"
-        placeholder="Last Name"
-        onChange={(e) => setLastName(e.target.value)}
-        value={lastName}
-      />
-      {lastNameError && <p className="error">{lastNameError}</p>}
-      <input
-        className="input"
-        placeholder="Email Address"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      {emailError && <p className="error">{emailError}</p>}
-      <input
-        className="input"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-        type="password"
-      />
-      {passwordError && <p className="error">{passwordError}</p>}
-      <input
-        className="input"
-        placeholder="Confirm Password"
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        value={confirmPassword}
-        type="password"
-      />
-      {confirmPasswordError && <p className="error">{confirmPasswordError}</p>}
-      <button className="button" onClick={handleRegister}>
-        Register
-      </button>
-      <p className="login-text">
-        Already have an account?{" "}
-        <span className="login-link" onClick={() => navigate("/login")}>
-          Login
-        </span>
-      </p>
+    <div className="login-container">
+      <div className="login-well">
+        <form>
+          <hgroup>
+            <h1>Register</h1>
+          </hgroup>
+
+          {error && <div className="error">{error}</div>}
+
+          <div>
+            <input
+              type="text"
+              placeholder="First Name"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+            />
+            {firstNameError && <div className="error">{firstNameError}</div>}
+          </div>
+
+          <div>
+            <input
+              type="text"
+              placeholder="Last Name"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+            />
+            {lastNameError && <div className="error">{lastNameError}</div>}
+          </div>
+
+          <div>
+            <input
+              type="email"
+              placeholder="Email Address"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+            {emailError && <div className="error">{emailError}</div>}
+          </div>
+
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            {passwordError && <div className="error">{passwordError}</div>}
+          </div>
+
+          <div>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={confirmPassword}
+            />
+            {confirmPasswordError && (
+              <div className="error">{confirmPasswordError}</div>
+            )}
+          </div>
+
+          <button className="button" onClick={handleRegister}>
+            Register
+          </button>
+          <p className="login-text">
+            Already have an account?{" "}
+            <span className="login-link" onClick={() => navigate("/login")}>
+              Login
+            </span>
+          </p>
+        </form>
+      </div>
+      <div className="login-illustration"></div>
     </div>
   );
 };
