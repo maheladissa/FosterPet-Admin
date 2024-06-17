@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../styles/Register.css";
-// import AuthenticationService from '../services/AuthenticationService';
+import { useNavigate } from "react-router-dom";
 
-const RegisterScreen = ({ navigation }) => {
+const RegisterScreen = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,18 +16,20 @@ const RegisterScreen = ({ navigation }) => {
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [error, setError] = useState("");
 
+  const navigate = useNavigate();
+
   const handleRegister = async () => {
     // Validation and registration logic
-        setConfirmPasswordError("");
-        setPasswordError("");
-        setEmailError("");
-        setLastNameError("");
-        setFirstNameError("");
-        setError("");
+    setConfirmPasswordError("");
+    setPasswordError("");
+    setEmailError("");
+    setLastNameError("");
+    setFirstNameError("");
+    setError("");
   };
 
   return (
-    <div className="container">
+    <div className="form-container">
       <h1 className="title">Register</h1>
       {error && <p className="error">{error}</p>}
       <input
@@ -72,10 +74,7 @@ const RegisterScreen = ({ navigation }) => {
       </button>
       <p className="login-text">
         Already have an account?{" "}
-        <span
-          className="login-link"
-          onClick={() => navigation.navigate("Login")}
-        >
+        <span className="login-link" onClick={() => navigate("/login")}>
           Login
         </span>
       </p>

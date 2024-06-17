@@ -75,10 +75,7 @@ const LoginScreen = ({ history }) => {
         {passwordError && <div className="error">{passwordError}</div>}
 
         <div className="forgot_container">
-          <span
-            className="forgotPassword"
-            onClick={() => history.push("/Reset")}
-          >
+          <span className="forgotPassword" onClick={() => navigate("/reset")}>
             Forgot Password?
           </span>
         </div>
@@ -89,7 +86,7 @@ const LoginScreen = ({ history }) => {
 
         <span>
           Don't have an account?{" "}
-          <span className="register" onClick={() => history.push("/Signup")}>
+          <span className="register" onClick={() => navigate("/register")}>
             Register
           </span>
         </span>

@@ -62,22 +62,30 @@ const AdminComplaints = () => {
         </select>
       </div>
       <div className="overview_content">
-        {filteredComplaints.map((item) => (
-          <div
-            key={item.id}
-            className="overview_items"
-            onClick={() => handleClick(item)}
-          >
-            <img
-              src="https://picsum.photos/400/600?image=1"
-              alt="Profile"
-              className="profilePic"
-            />
-            <div className="detailContainer">
-              <div>
-                {" "}
+        {complaintsData.length === 0 ? (
+          <div className="loading-spinner"></div>
+        ) : (
+          filteredComplaints.map((item) => (
+            <div
+              key={item.id}
+              className="overview_items"
+              onClick={() => handleClick(item)}
+            >
+              <div className="imageContainer">
+                <img
+                  src="https://picsum.photos/400/600?image=1"
+                  alt="Profile"
+                  className="profilePic"
+                />
+
+                <div className="infoContainer">
+                  <p className="customerName">{item.userName}</p>
+                  <p className="dateText">{item.createdAt}</p>
+                </div>
+              </div>
+              <div className="detailContainer">
                 <p className="title">
-                  {item.message}{" "}
+                  {item.kennelName}{" "}
                   <span
                     className="priority"
                     style={{
@@ -92,16 +100,15 @@ const AdminComplaints = () => {
                     {item.status}
                   </span>
                 </p>
-              </div>
 
-              <p className="subtitle">{item.kennelName}</p>
+                <div>
+                  {" "}
+                  <p className="subtitle">{item.message} </p>
+                </div>
+              </div>
             </div>
-            <div className="infoContainer">
-              <p className="customerName">{item.userName}</p>
-              <p className="dateText">{item.createdAt}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

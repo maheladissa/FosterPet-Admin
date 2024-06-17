@@ -5,7 +5,8 @@
   padding: 20px;
   min-height: calc(100vh - 80px); /* Adjusting the container height */
   width: 60%;
-  margin:auto
+  margin:auto;
+  
 }
 
 /* Search and Filter Bar */
@@ -28,16 +29,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 60px;
 }
 
 .overview_items {
-  background-color: white;
-  padding: 15px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  column-gap: 50px;
   cursor: pointer;
 }
 
@@ -46,20 +47,34 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+
 }
 
 .detailContainer {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
 }
 
+.infoContainer {
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .title {
   font-size: 16px;
   font-weight: bold;
 }
 
 .subtitle, .customerName, .dateText {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
+  padding: 0;
+  margin: 0;
 }
 
 .priority {

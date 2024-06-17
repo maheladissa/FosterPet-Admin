@@ -51,6 +51,7 @@ const AdminOverView = () => {
     };
 
     getDashboardData();
+    console.log(dashboardData);
   }, []);
 
   if (loading) {
