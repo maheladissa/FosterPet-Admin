@@ -6,7 +6,7 @@ class AuthenticationService {
     //login function
     async login(email, password) {
       try {
-        const response = await fetch(`${this.baseUrl}/api/auth/authenticate`, {
+        const response = await fetch(`${this.baseUrl}/api/auth/admin-login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
