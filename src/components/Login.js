@@ -93,7 +93,6 @@ const LoginComponent = () => {
             {passwordError && <div className="error">{passwordError}</div>}
           </div>
 
-
           <a href="#" id="forgot-pwd" onClick={() => navigate("/reset")}>
             Forgot Password?
           </a>
