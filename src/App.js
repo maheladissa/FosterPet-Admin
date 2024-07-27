@@ -1,9 +1,8 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
-  Navigate,
+  Navigate, useLocation,
 } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import Orders from "./components/Orders";
@@ -22,11 +21,13 @@ import ActiveUsers from "./components/ActiveUsers";
 import CompletedDetails from "./components/CompletedDetails";
 
 function App() {
+  const location = useLocation();
+
+  const hideHeaderPaths = ["/login", "/register", "/reset"];
   return (
-    <Router>
       <div className="App">
         <header className="App-header">
-          <Navbar />
+          {!hideHeaderPaths.includes(location.pathname) && <Navbar />}
         </header>
         <main>
           <Routes>
@@ -48,7 +49,6 @@ function App() {
           </Routes>
         </main>
       </div>
-    </Router>
   );
 }
 
