@@ -1,10 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "../styles/OrderDetails.css";
+import "../styles/UserDetails.css";
+import { useNavigate } from "react-router-dom";
 
-const OrderDetails = () => {
+const UserDetails = () => {
   const location = useLocation();
   const { userData } = location.state;
+  const navigate = useNavigate();
 
   const messageUser = (id) => {
     console.log(`Message user with user ID: ${id}`);
@@ -14,38 +16,56 @@ const OrderDetails = () => {
     console.log(`Removed user with user ID: ${id}`);
   };
 
+  const goToUsers = (id) => {
+    navigate("/user-management");
+  };
+
   return (
-    <div className="order_details_container">
-      <div className="details_item">
-        <div className="label">Name:</div>
-        <div className="value">
-          {userData.firstName}
-          {userData.lastName}
+    <div className="user-details-container">
+      <div className="user-details-card">
+        <h2 className="user-details-title">User Details</h2>
+        <div className="details-item">
+          <span className="label">Name:</span>
+          <span className="value">
+            {userData.firstName} {userData.lastName}
+          </span>
+        </div>
+        <div className="details-item">
+          <span className="label">Email:</span>
+          <span className="value">{userData.email}</span>
+        </div>
+        <div className="details-item">
+          <span className="label">Phone:</span>
+          <span className="value">{userData.phoneNumber}</span>
+        </div>
+        <div className="details-item">
+          <span className="label">Address:</span>
+          <span className="value">{userData.address}</span>
+        </div>
+        <div className="details-item">
+          <span className="label">User Id:</span>
+          <span className="value">{userData.userId}</span>
+        </div>
+        <div className="button-container">
+          <button className="button button-back" onClick={() => goToUsers()}>
+            Back
+          </button>
+          <button
+            className="button button-message"
+            onClick={() => messageUser(userData.userId)}
+          >
+            Message
+          </button>
+          <button
+            className="button button-remove"
+            onClick={() => handleRemoveUser(userData.userId)}
+          >
+            Remove
+          </button>
         </div>
       </div>
-      <div className="details_item">
-        <div className="label">Email:</div>
-        <div className="value">{userData.email}</div>
-      </div>
-      <div className="details_item">
-        <div className="label">Phone:</div>
-        <div className="value">{userData.phoneNumber}</div>
-      </div>
-      <button
-        className="buttonSmallBlue"
-        onClick={() => messageUser(userData.userId)}
-      >
-        <span className="buttonTextWhite">Message</span>
-      </button>
-
-      <button
-        className="buttonSmallBlue"
-        onClick={() => handleRemoveUser(userData.userId)}
-      >
-        <span className="buttonTextWhite">Remove</span>
-      </button>
     </div>
   );
 };
 
-export default OrderDetails;
+export default UserDetails;
