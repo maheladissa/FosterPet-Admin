@@ -53,7 +53,7 @@ hgroup {
   margin-bottom: 4rem;
 }
 
-a,
+h6,
 p {
   font-size: 0.8125rem;
 }
@@ -96,13 +96,14 @@ input:valid + label {
   color: var(--gray-base);
 }
 
-a {
+h6 {
   color: var(--accent-base);
   transition: color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-a:hover {
-  color: var(--gray-base);
+h6:hover {
+  color: var(--accent-base);
 }
 
 #forgot-pwd {

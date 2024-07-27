@@ -52,6 +52,7 @@ const AdminOverView = () => {
 
     getDashboardData();
     console.log(dashboardData);
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {

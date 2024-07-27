@@ -4,6 +4,7 @@ const API_URL = "https://fosterpet.azurewebsites.net/api/admin/dashboard";
 const Token = localStorage.getItem("token");
 
 export const fetchDashboardData = async () => {
+    console.log(Token)
     try {
         const response = await fetch(API_URL, {
             method: "GET",
@@ -14,6 +15,7 @@ export const fetchDashboardData = async () => {
         });
 
         if (!response.ok) {
+            console.log("Response:", response);
             throw new Error("Network response was not ok");
         }
 
