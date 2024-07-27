@@ -23,20 +23,20 @@ const AdminUserManagement = () => {
     loadUsersData();
   }, []);
 
-  const [data, setData] = useState(usersData);
+  // const [data, setData] = useState(usersData);
 
   const handleUserDetails = (userData) => {
     navigate(`/user-details/${userData.userId}`, { state: { userData } });
   };
 
-  const messageUser = (id) => {
-    console.log(`Message user with user ID: ${id}`);
-  };
+  // const messageUser = (id) => {
+  //   console.log(`Message user with user ID: ${id}`);
+  // };
 
-  const handleRemoveUser = (id) => {
-    setData(data.filter((item) => item.userId !== id));
-    console.log(`Removed user with user ID: ${id}`);
-  };
+  // const handleRemoveUser = (id) => {
+  //   setData(data.filter((item) => item.userId !== id));
+  //   console.log(`Removed user with user ID: ${id}`);
+  // };
 
   return (
     <div className="user_container">
