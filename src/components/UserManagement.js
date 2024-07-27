@@ -42,14 +42,20 @@ const AdminUserManagement = () => {
     <div className="user_container">
       <div className="user_content">
         {usersData.map((user) => (
-          <div key={user.userId} className="user_itemContainer">
+          <div
+            key={user.userId}
+            className="user_itemContainer"
+            onClick={() => handleUserDetails(user)}
+          >
             <p className="name">
               {user.firstName}
               {user.lastName}
             </p>
             <p className="detail">{user.email}</p>
             <p className="detail">{user.phoneNumber}</p>
-            <button
+            {/* 
+
+           <button
               className="buttonSmallBlue"
               onClick={() => handleUserDetails(user)}
             >
@@ -69,6 +75,7 @@ const AdminUserManagement = () => {
             >
               <span className="buttonTextWhite">Remove</span>
             </button>
+            */}
           </div>
         ))}
       </div>

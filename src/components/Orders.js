@@ -44,7 +44,7 @@ const AdminOrders = () => {
     <div className="order_container">
       <div className="order_list">
         {pendingApprovals.length === 0 ? (
-          <div>No pending approvals</div>
+          <div className="loading-spinner"></div>
         ) : (
           pendingApprovals.map((item) => (
             <div key={item.kennelId}>
