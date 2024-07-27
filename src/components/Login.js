@@ -93,9 +93,9 @@ const LoginComponent = () => {
             {passwordError && <div className="error">{passwordError}</div>}
           </div>
 
-          <a href="#" id="forgot-pwd" onClick={() => navigate("/reset")}>
+          <h6 id="forgot-pwd" onClick={() => navigate("/reset")}>
             Forgot Password?
-          </a>
+          </h6>
 
           <button
             type="submit"
@@ -111,12 +111,11 @@ const LoginComponent = () => {
           </button>
         </form>
 
-        <p>
+        <p className="login-text">
           Don't have an account?{" "}
-          <a href="#" onClick={() => navigate("/register")}>
+          <span className="login-link" onClick={() => navigate("/register")}>
             Sign Up
-          </a>
-          .
+          </span>
         </p>
       </div>
       <div className="login-illustration"></div>
