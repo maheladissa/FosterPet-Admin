@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Order.css";
-import { fetchPendingApprovals } from "../services/ApprovalService";
+import { fetchPendingApprovals } from "../services/KennelService";
 
 const AdminOrders = () => {
   const navigate = useNavigate();

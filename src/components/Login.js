@@ -43,10 +43,10 @@ const LoginComponent = () => {
       const createdAt = new Date().toISOString();
       const expiresAt = new Date(Date.now() + 60 * 60 * 1000).toISOString();
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("tokenCreatedAt", createdAt);
-      localStorage.setItem("tokenExpiresAt", expiresAt);
-      localStorage.setItem("userId", userData.userId);
+      await localStorage.setItem("token", token);
+      await localStorage.setItem("tokenCreatedAt", createdAt);
+      await localStorage.setItem("tokenExpiresAt", expiresAt);
+      await localStorage.setItem("userId", userData.userId);
 
       await new Promise((resolve) => setTimeout(resolve, 100));
 
