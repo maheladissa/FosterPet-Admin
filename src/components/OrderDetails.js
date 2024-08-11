@@ -1,8 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/OrderDetails.css";
-import {acceptRequest,rejectRequest} from "../services/KennelService";
-import async from "async";
+import { acceptRequest, rejectRequest } from "../services/KennelService";
 
 const OrderDetails = () => {
   const location = useLocation();
@@ -11,25 +10,23 @@ const OrderDetails = () => {
 
   const handleCancel = (id) => {
     console.log(`Cancel request for id: ${id}`);
-    try{
+    try {
       const response = rejectRequest(id);
       console.log("Reject request data:", response);
       navigate("/requests");
-    }
-    catch (error) {
+    } catch (error) {
       console.error("Error rejecting request:", error);
     }
   };
 
   const handleAccept = (id) => {
     console.log(`Accept request for id: ${id}`);
-    try{
-        const response = acceptRequest(id);
-        console.log("Accept request data:", response);
-        navigate("/requests");
-    }
-    catch (error) {
-        console.error("Error accepting request:", error);
+    try {
+      const response = acceptRequest(id);
+      console.log("Accept request data:", response);
+      navigate("/requests");
+    } catch (error) {
+      console.error("Error accepting request:", error);
     }
   };
 
