@@ -41,20 +41,20 @@ const LoginComponent = () => {
       const userData = await AuthenticationService.login(email, password);
       const token = `Bearer ${userData.token}`;
       const createdAt = new Date().toISOString();
-      const expiresAt = new Date(Date.now() + 60 * 60 * 1000).toISOString();
+      const expiresAt = new Date(
+        Date.now() + 60 * 60 * 1000 * 24 * 90
+      ).toISOString();
 
       await localStorage.setItem("token", token);
       await localStorage.setItem("tokenCreatedAt", createdAt);
       await localStorage.setItem("tokenExpiresAt", expiresAt);
       await localStorage.setItem("userId", userData.userId);
-
-      await new Promise((resolve) => setTimeout(resolve, 100));
-
-      navigate("/overview");
     } catch (error) {
       console.error("Login failed:", error.message);
       setError("Invalid Email Address or Password");
+    } finally {
       setLoading(false);
+      navigate("/overview");
     }
   };
 

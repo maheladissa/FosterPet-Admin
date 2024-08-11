@@ -3,27 +3,29 @@ import { Link } from "react-router-dom";
 import "../styles/Overview.css";
 import { fetchDashboardData } from "../services/OverviewService";
 import useAuth from "../services/useAuth";
+import { Pie, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from "chart.js";
+
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement
+);
 
 const AdminOverView = () => {
-  // const options = {
-  //   scales: {
-  //     x: {
-  //       title: {
-  //         display: true,
-  //         text: "Month",
-  //       },
-  //     },
-  //     y: {
-  //       beginAtZero: true,
-  //       title: {
-  //         display: true,
-  //         text: "Value",
-  //       },
-  //     },
-  //   },
-  //   maintainAspectRatio: false,
-  // };
-
   useAuth();
 
   const [dashboardData, setDashboardData] = useState({
@@ -59,6 +61,53 @@ const AdminOverView = () => {
     return <div className="loading-spinner"></div>;
   }
 
+  const pieData1 = {
+    labels: ["Category 1", "Category 2"],
+    datasets: [
+      {
+        label: "Pie Chart 1",
+        data: [30, 70],
+        backgroundColor: ["#FF6384", "#36A2EB"], // Hard colors
+        borderColor: ["#FF6384", "#36A2EB"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const barData = {
+    labels: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    datasets: [
+      {
+        label: "Weekly Data",
+        data: [12, 19, 3, 5, 2, 3, 7],
+        backgroundColor: "#FFCE56", // Hard color
+        borderColor: "#FFCE56",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const pieData2 = {
+    labels: ["Portion 1", "Portion 2", "Portion 3", "Portion 4"],
+    datasets: [
+      {
+        label: "Pie Chart 2",
+        data: [25, 35, 20, 20],
+        backgroundColor: ["#E7E9ED", "#6A2135", "#FB6D03", "#2B4F70"], // Hard colors
+        borderColor: ["#E7E9ED", "#6A2135", "#FB6D03", "#2B4F70"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
   return (
     <div className="overview-container">
       <div className="cardsContainer">
@@ -89,6 +138,17 @@ const AdminOverView = () => {
           <Link to="/overview/completed" className="button">
             View Details
           </Link>
+        </div>
+      </div>
+      <div className="chartsContainer">
+        <div className="chart">
+          <Pie data={pieData1} />
+        </div>
+        <div className="chart">
+          <Bar data={barData} />
+        </div>
+        <div className="chart">
+          <Pie data={pieData2} />
         </div>
       </div>
     </div>
