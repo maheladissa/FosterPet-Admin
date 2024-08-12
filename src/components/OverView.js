@@ -75,7 +75,6 @@ const AdminOverView = () => {
     labels: ["Kennels", "Volunteers"],
     datasets: [
       {
-        label: "Pie Chart 1",
         data: [dashboardData.totalKennels, dashboardData.totalVolunteers],
         backgroundColor: ["#FF6384", "#36A2EB"], // Hard colors
         borderColor: ["#FF6384", "#36A2EB"],
@@ -96,7 +95,6 @@ const AdminOverView = () => {
     ],
     datasets: [
       {
-        label: "Weekly Data",
         data: dashboardData.weeklyPayment,
         backgroundColor: "#FFCE56", // Hard color
         borderColor: "#FFCE56",
@@ -109,7 +107,6 @@ const AdminOverView = () => {
     labels: ["Ongoing", "Completed", "Pending", "Cancled"],
     datasets: [
       {
-        label: "Pie Chart 2",
         data: [
           dashboardData.ongoingFostering,
           dashboardData.completedFostering,
