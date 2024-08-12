@@ -1,23 +1,22 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchOngoingFosterings } from "../services/fosteringService";
+import { fetchOngoingFosterings } from "../services/FosteringService";
 
 const OngoingFosterings = () => {
-    const [ongoingFostering, setOngoingFostering] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [ongoingFostering, setOngoingFostering] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetchOngoingFosterings()
-            .then((data) => {
-                setOngoingFostering(data);
-                setLoading(false);
-                console.log("OngoingFosterings data:", data);
-            })
-            .catch((error) => {
-                console.error("Error fetching ongoing fosterings data:", error);
-            });
-
-    }, []);
+  useEffect(() => {
+    fetchOngoingFosterings()
+      .then((data) => {
+        setOngoingFostering(data);
+        setLoading(false);
+        console.log("OngoingFosterings data:", data);
+      })
+      .catch((error) => {
+        console.error("Error fetching ongoing fosterings data:", error);
+      });
+  }, []);
 
   return (
     <div className="detail-container">
