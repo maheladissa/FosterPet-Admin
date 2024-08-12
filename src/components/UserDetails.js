@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/UserDetails.css";
 import { useNavigate } from "react-router-dom";
+import { deleteUser} from "../services/UserService";
 
 const UserDetails = () => {
   const location = useLocation();
@@ -13,7 +14,8 @@ const UserDetails = () => {
   };
 
   const handleRemoveUser = (id) => {
-    console.log(`Removed user with user ID: ${id}`);
+    deleteUser(id).then(r => {console.log(`Removed user: ${r}`);});
+
   };
 
   const goToUsers = (id) => {

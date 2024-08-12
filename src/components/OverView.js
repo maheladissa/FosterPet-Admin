@@ -29,10 +29,16 @@ const AdminOverView = () => {
   useAuth();
 
   const [dashboardData, setDashboardData] = useState({
-    activeAgents: 0,
-    ongoingFostering: 0,
     activeUsers: 0,
+    activeAgents: 0,
+    totalKennels: 0,
+    totalVolunteers: 0,
+    weeklyPayments: 0,
+    ongoingFostering: 0,
     completedFostering: 0,
+    pendingFostering: 0,
+    canceledFostering: 0,
+
   });
   const [loading, setLoading] = useState(true);
 
@@ -45,6 +51,11 @@ const AdminOverView = () => {
           ongoingFostering: data.ongoingFostering,
           activeUsers: data.activeUsers,
           completedFostering: data.completedFostering,
+          totalKennels: data.totalKennels,
+          totalVolunteers: data.totalVolunteers,
+          weeklyPayment: data.weeklyPayment,
+          pendingFostering: data.pendingFostering,
+          canceledFostering: data.canceledFostering,
         });
         setLoading(false);
       } catch (error) {
@@ -62,11 +73,11 @@ const AdminOverView = () => {
   }
 
   const pieData1 = {
-    labels: ["Category 1", "Category 2"],
+    labels: ["Kennels", "Volunteers"],
     datasets: [
       {
         label: "Pie Chart 1",
-        data: [30, 70],
+        data: [dashboardData.totalKennels, dashboardData.totalVolunteers],
         backgroundColor: ["#FF6384", "#36A2EB"], // Hard colors
         borderColor: ["#FF6384", "#36A2EB"],
         borderWidth: 1,
@@ -87,7 +98,7 @@ const AdminOverView = () => {
     datasets: [
       {
         label: "Weekly Data",
-        data: [12, 19, 3, 5, 2, 3, 7],
+        data: dashboardData.weeklyPayment,
         backgroundColor: "#FFCE56", // Hard color
         borderColor: "#FFCE56",
         borderWidth: 1,
@@ -96,11 +107,11 @@ const AdminOverView = () => {
   };
 
   const pieData2 = {
-    labels: ["Portion 1", "Portion 2", "Portion 3", "Portion 4"],
+    labels: ["Ongoing", "Completed", "Pending", "Cancled"],
     datasets: [
       {
         label: "Pie Chart 2",
-        data: [25, 35, 20, 20],
+        data: [dashboardData.ongoingFostering, dashboardData.completedFostering, dashboardData.pendingFostering, dashboardData.canceledFostering],
         backgroundColor: ["#E7E9ED", "#6A2135", "#FB6D03", "#2B4F70"], // Hard colors
         borderColor: ["#E7E9ED", "#6A2135", "#FB6D03", "#2B4F70"],
         borderWidth: 1,
