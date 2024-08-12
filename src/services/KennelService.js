@@ -69,3 +69,26 @@ export const rejectRequest = async (id) => {
         throw error;
     }
 }
+
+export const fetchActiveKennels = async (startTime, endTime) => {
+    try {
+        const response = await fetch(API_URL + `/time-period?startDate=${startTime}&endDate=${endTime}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Token,
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        //console.log("ActiveKennels data:", data);
+        return data;
+    } catch (error) {
+        console.error("Error fetching active kennels:", error);
+        throw error;
+    }
+}
