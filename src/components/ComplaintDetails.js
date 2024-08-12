@@ -6,6 +6,14 @@ const ComplaintDetail = () => {
   const location = useLocation();
   const { complaint } = location.state;
 
+  const discardComplaint = () => {
+
+  }
+
+  const contactUser = () => {
+
+  }
+
   return (
     <div className="container">
       <div className="header">
@@ -39,8 +47,8 @@ const ComplaintDetail = () => {
       </div>
 
       <div className="buttons">
-        <button className="button discard">Discard</button>
-        <button className="button contact">Contact</button>
+        <button className="button discard" onClick={discardComplaint}>Discard</button>
+        <button className="button contact" onClick={contactUser}>Contact</button>
       </div>
     </div>
   );

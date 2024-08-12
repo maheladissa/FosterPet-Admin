@@ -22,4 +22,28 @@ export const fetchAllUsers = async () => {
         console.error("Error fetching dashboard data:", error);
         throw error;
     }
+
 };
+
+export const deleteUser = async (userId) => {
+    try {
+        const response = await fetch(`${API_URL}/delete?id=${userId}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": Token,
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        console.log("Deleted user data:", data);
+        return data;
+    } catch (error) {
+        console.error("Error deleting user:", error);
+        throw error;
+    }
+}
