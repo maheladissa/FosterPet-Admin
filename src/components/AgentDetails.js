@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "../styles/OverViewDetails.css";
+import {fetchActiveKennels} from "../services/KennelService";
 
 const AgentDetails = () => {
     const [agentDetails, setAgentDetails] = useState([]);
@@ -10,6 +11,21 @@ const AgentDetails = () => {
 
     // Setting endTime to the current date and time
     const [endTime, setEndTime] = useState(new Date().toISOString());
+
+    useEffect(() => {
+        fetchActiveKennels(startTime, endTime)
+            .then((data) => {
+                setAgentDetails(data);
+                console.log(startTime, endTime);
+                console.log("Agent details data:", data);
+                setLoading(false);
+            }
+            )
+            .catch((error) => {
+                console.error("Error fetching agent details:", error);
+                setLoading(false);
+            });
+    } , [startTime, endTime]);
 
   return (
     <div className="detail-container">

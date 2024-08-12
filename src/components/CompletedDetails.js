@@ -1,7 +1,25 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
+import { fetchCompletedFosterings } from "../services/fosteringService";
 
 const CompletedDetails = () => {
+
+    const [completedFostering, setCompletedFostering] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchCompletedFosterings()
+            .then((data) => {
+                setCompletedFostering(data);
+                setLoading(false);
+                console.log("CompletedFosterings data:", data);
+            })
+            .catch((error) => {
+                console.error("Error fetching completed fosterings data:", error);
+            });
+
+    } , []);
+
   return (
     <div className="detail-container">
       <h1 className="detail-header">Completed Fosterings Details</h1>
