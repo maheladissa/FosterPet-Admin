@@ -10,6 +10,27 @@
   color: #333;
 }
 
+/* ActiveUsers.css */
+.date-picker-container {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.date-picker {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+.date-picker:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 .detail-content {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
